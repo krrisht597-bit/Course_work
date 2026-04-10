@@ -1,0 +1,373 @@
+
+/* --- Basic Reset --- */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+    font-family: Arial, sans-serif;
+
+}
+
+
+
+body {
+
+    background-color: #e2e7e6; 
+
+}
+
+
+
+/* --- Navbar Section --- */
+
+header {
+
+    background-color: #0f1111;
+
+    color: white;
+
+}
+
+
+
+.navbar {
+
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 15px;
+
+}
+
+
+
+.nav-logo img {
+
+    height: 35px;
+
+    width: 100px;
+
+    margin-top: 5px;
+
+}
+
+
+
+.border {
+
+    border: 1.5px solid transparent;
+
+}
+
+
+
+.border:hover {
+
+    border: 1.5px solid white;
+
+    cursor: pointer;
+
+}
+
+
+
+/* SEARCH BAR */
+
+.nav-search {
+
+    display: flex;
+
+    flex-grow: 1;
+
+    height: 40px;
+
+    margin: 0 15px;
+
+    border-radius: 4px;
+
+    overflow: hidden;
+
+    background-color: white;
+
+}
+
+
+
+.nav-search:hover {
+
+    border: 3px solid #febd69;
+
+}
+
+
+
+.search-select {
+
+    background-color: #f3f3f3;
+
+    width: 50px;
+
+    border: none;
+
+    text-align: center;
+
+}
+
+
+
+.search-input {
+
+    flex-grow: 1;
+
+    border: none;
+
+    outline: none;
+
+    padding-left: 10px;
+
+    font-size: 1rem;
+
+}
+
+
+
+.search-btn {
+
+    width: 45px;
+
+    background-color: #febd69;
+
+    border: none;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 1.2rem;
+
+    cursor: pointer;
+
+}
+
+
+
+/* Right Nav */
+
+.nav-right {
+
+    display: flex;
+
+    gap: 10px;
+
+}
+
+
+
+.nav-line-1 { font-size: 0.75rem; }
+
+.nav-line-2 { font-size: 0.85rem; font-weight: 700; }
+
+
+
+/* --- Panel Section --- */
+
+.panel {
+
+    height: 40px;
+
+    background-color: #232f3e;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 15px;
+
+    font-size: 0.85rem;
+
+    color: white;
+
+}
+
+
+
+.panel-ops {
+
+    display: flex;
+
+    gap: 15px;
+
+    margin-left: 15px;
+
+}
+
+
+
+.panel-deals {
+
+    margin-left: auto;
+
+    font-weight: 700;
+
+}
+/* --- Hero Section **/
+.hero-section {
+    height: 600px !important; 
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    
+    background: linear-gradient(to right, #1b2531 45%, #a6d0d6 45%) !important; 
+}
+
+.hero-section::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 55%; 
+    height: 100%;
+    background-image: url('images/hero_image.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+
+.hero-content {
+    position: absolute;
+    top: 100px;
+    left: 15%; 
+    z-index: 10;
+}
+
+.hero-content p {
+    color: white;
+    font-size: 3rem; 
+    font-weight: 700;
+    line-height: 1.2;
+    max-width: 350px;
+}
+
+
+.hero-msg {
+    background-color: white !important;
+    color: #0f1111 !important;
+    height: 40px;
+    width: 90% !important; 
+    position: absolute;
+    bottom: 230px !important; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    z-index: 100 !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+
+.shop-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: -190px !important; 
+    position: relative;
+    z-index: 50 !important;
+    padding: 0 20px 40px;
+    background-color: #e2e7e6;
+}
+.box {
+    height: 420px;
+    width: 23%; 
+    background-color: white;
+    padding: 20px 15px;
+    margin-top: 20px;
+    box-shadow: 0 1px 10px rgba(0,0,0,0.1);
+}
+
+.box-img {
+    height: 280px; 
+    background-size: cover;
+    background-position: center;
+    margin-top: 10px;
+}
+
+
+
+.box-content h2 {
+
+    font-size: 1.25rem;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+.box-content p {
+
+    color: #007185;
+
+    font-size: 0.85rem;
+
+    cursor: pointer;
+
+}
+
+
+
+/* --- Footer --- */
+
+.foot-panel1 {
+
+    background-color: #37475a;
+
+    color: white;
+
+    height: 50px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin-top: 20px;
+
+}
+
+
+
+.foot-panel2 {
+
+    background-color: #232f3e;
+
+    color: white;
+
+    padding: 40px 0;
+
+    display: flex;
+
+    justify-content: space-evenly;
+
+}
+
+
+
+ul p { font-weight: 700; margin-bottom: 15px; }
+
+ul a { display: block; color: #dddddd; font-size: 0.85rem; margin-top: 10px; text-decoration: none; }

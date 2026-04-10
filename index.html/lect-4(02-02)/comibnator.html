@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .first ~ p{
+            color: blue;
+        }
+        .sec +p{
+            color: red;
+        }
+        .third p{
+            background-color: gray;
+            color: white;
+        }
+        ul li{
+            list-style: none;
+            color: pink;
+        }
+    </style>
+</head>
+<body>
+    <h1>Combinator example</h1>
+    <h2>General Sibling Selector</h2>
+
+    <div class="first"> </div>
+        <p>Welcome top tops tech</p>
+        <p>Welcome top tops tech</p>
+        <p>Welcome top tops tech</p>
+       
+    <h2>Adjacent Sibling Selector (+)</h2>
+    <div class="sec"> </div>
+        <p>Welcome top tops tech</p>
+        <p>Welcome top tops tech</p>
+        <p>Welcome top tops tech</p>
+
+    <div class="sec"> </div>
+        <p>Welcome top tops tech</p>
+        <p>Welcome top tops tech</p>
+        <p>Welcome top tops tech</p>
+
+
+   <h2>Child Selector (>)</h2>
+   <div class="third"> 
+        <p>Welcome top tops tech</p>
+        <p>Welcome top tops tech</p>
+        <p>Welcome top tops tech</p>
+    </div>  
+    
+    
+    <h2>Css Descendant Selector</h2>
+    <br>
+    <code> ul li{
+            list-style: none;
+            color: brown;
+        }</code>
+   </p>
+    <ul>
+        <li>Item-1</li>
+        <li>Item-2</li>
+        <li>Item-3</li>
+        <li>Item-4</li>
+        <li>Item-5</li>
+    </ul>
+</body>
+</html>
+
