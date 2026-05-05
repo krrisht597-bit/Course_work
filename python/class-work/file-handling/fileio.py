@@ -56,8 +56,8 @@
 #     data = f.read()
 #     print(data)
 
-# import json
+import json
 
-# d = {"name":"priyanshu","email":"priyanshu@gmail.com"}
-# with open("data.json",'w') as f:
-#     json.dump(d,f) 
+d = {"name":"priyanshu","email":"priyanshu@gmail.com"}
+with open("data.json",'w') as f:
+    json.dump(d,f)    
