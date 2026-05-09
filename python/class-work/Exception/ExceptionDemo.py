@@ -2,9 +2,9 @@
 # print("Program started")
 
 # try :
-#     # a = 10
-#     # b = a/0
-#     # print(b)
+#     a = 10
+#     b = a/0
+#     print(b)
 #     print(10+"dsds")
 # except Exception as e:
 #     print("exception")

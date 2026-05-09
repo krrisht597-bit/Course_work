@@ -10,7 +10,7 @@
 # print(next(l))
 # print(next(l))
 
-list=["name","city","course"]
-tuple=("krish","kadodra","phython")
-l=zip(list,tuple)
-print(dict(l))
+# list=["name","city","course"]
+# tuple=("krish","kadodra","phython")
+# l=zip(list,tuple)
+# print(dict(l)) 
