@@ -35,3 +35,27 @@ These methods are defined with the @classmethod decorator.
 
 3.Static Methods: Methods that do not operate on an instance or the class itself but behave
 like normal functions. These methods are defined with the @staticmethod decorator
+
+Inheritance → Ek class dusri class ke features use karti hai.
+Parent Class → Jis class se features liye jaate hain.
+Child Class → Jo class features inherit karti hai.
+Method Overriding → Child class parent ke method ko change kar sakti hai.
+
+Types of Inheritance (Easy Notes)
+Single Inheritance → Ek child class, ek parent class se inherit karti hai.
+Multiple Inheritance → Ek child class, ek se zyada parent classes se inherit karti hai.
+Multilevel Inheritance → Ek class dusri class se inherit karti hai, aur woh class kisi aur class se inherit karti hai.
+Hierarchical Inheritance → Ek parent class se multiple child classes inherit karti hain.
+Hybrid Inheritance → Different inheritance types ka combination.
+
+**access modifiers:-
+
+In Python, access modifiers are used to limit access to class variables and methods. Unlike languages like Java or C++, Python does not strictly enforce these restrictions. Instead, it relies on naming conventions to indicate how members should be used.
+
+TypePrefixAccessibilityEnforcementPublicNoneAccessible from anywhereNone (Default)Protected_ (Single underscore)Within the class and its subclassesConvention onlyPrivate__ (Double underscore)Only within the defining className Mangling
+
+
+name mangling:-
+In Python, name mangling is a mechanism that automatically renames any identifier within a class that starts with at least two underscores (e.g., __attribute) and ends with at most one underscore.
+
+Encapsulation Python mein ek OOP concept hai jisme data (variables) aur methods (functions) ko ek class ke andar bundle kiya jata hai. Iska main purpose object ki important details ko hide karna aur sirf zaroori cheezein access karne dena hota hai. 
