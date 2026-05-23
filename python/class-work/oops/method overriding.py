@@ -11,3 +11,4 @@ class B(A):
 
 b=B()
 b.test()
+
