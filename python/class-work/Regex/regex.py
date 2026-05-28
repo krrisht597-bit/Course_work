@@ -69,21 +69,21 @@
 # else:
 #     print("Valid Number")
 
-import re
-k = re.search("h.l","hlklo pytholn")
-print(k)
-k = re.search("^Hello","java Hello python")
-print(k)
-k = re.search("java$","java Hello python")
-print(k)
-k = re.search("ja*v","jva Hello python")
-print(k)
-k = re.search("ja+v","jaaaava Hello python")
-print(k)
-k = re.search("ja?v","jaava Hello python")
-print(k)
-k = re.findall(r"\bhello\b","hello python 123 @")
-print(k)
+# import re
+# k = re.search("h.l","hlklo pytholn")
+# print(k)
+# k = re.search("^Hello","java Hello python")
+# print(k)
+# k = re.search("java$","java Hello python")
+# print(k)
+# k = re.search("ja*v","jva Hello python")
+# print(k)
+# k = re.search("ja+v","jaaaava Hello python")
+# print(k)
+# k = re.search("ja?v","jaava Hello python")
+# print(k)
+# k = re.findall(r"\bhello\b","hello python 123 @")
+# print(k)
 
 # | Symbol | Meaning             |
 # | ------ | ------------------- |
