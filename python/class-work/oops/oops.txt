@@ -59,3 +59,17 @@ name mangling:-
 In Python, name mangling is a mechanism that automatically renames any identifier within a class that starts with at least two underscores (e.g., __attribute) and ends with at most one underscore.
 
 Encapsulation Python mein ek OOP concept hai jisme data (variables) aur methods (functions) ko ek class ke andar bundle kiya jata hai. Iska main purpose object ki important details ko hide karna aur sirf zaroori cheezein access karne dena hota hai. 
+
+
+Re Module
+● re.match(pattern, string): Checks if the pattern matches at
+the beginning of the string.
+● re.search(pattern, string): Searches for the pattern anywhere
+in the string.
+● re.findall(pattern, string): Returns a list of all matches of the
+pattern in the string.
+● re.finditer(pattern, string): Returns an iterator yielding
+match objects.
+● re.sub(pattern, repl, string): Replaces occurrences of the
+pattern with the replacement string.
+● re.split(pattern, string): Splits the string by occurrences of 
