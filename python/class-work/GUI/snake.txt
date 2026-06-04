@@ -1,0 +1,289 @@
+1. Import Statements
+from tkinter import *
+import random
+tkinter → GUI (window, button, canvas) banane ke liye.
+random → Food ko random jagah par generate karne ke liye.
+
+2. Game Settings
+WIDTH = 600
+HEIGHT = 600
+SPEED = 100
+SPACE_SIZE = 20
+BODY_PARTS = 3
+Meaning
+WIDTH = 600 → Game window ki width.
+HEIGHT = 600 → Game window ki height.
+SPEED = 100 → Snake kitni fast move karega.
+SPACE_SIZE = 20 → Ek block ka size 20x20 pixels.
+BODY_PARTS = 3 → Starting mein snake ke 3 body parts honge.
+
+3. Colors
+SNAKE_COLOR = "green"
+FOOD_COLOR = "red"
+BACKGROUND_COLOR = "black"
+Game ke colors define kiye gaye hain.
+
+4. Global Variables
+score = 0
+direction = "down"
+Score initially 0 hai.
+Snake starting mein niche move karega.
+
+5. Snake Class
+class Snake:
+Ye class snake create karti hai.
+
+**Constructor
+def __init__(self):
+Object bante hi automatically execute hota hai.
+
+**Body Size
+self.body_size = BODY_PARTS
+Snake ke body parts = 3.
+
+**Coordinates List
+self.coordinates = []
+Snake ke har block ki position store karegi.
+
+Example:
+[[0,0],[0,20],[0,40]]
+Squares List
+self.squares = []
+Canvas par bane rectangles store honge.
+
+Initial Coordinates
+for i in range(0, BODY_PARTS):
+    self.coordinates.append([0,0])
+Starting mein snake ke saare body parts:
+
+[[0,0],[0,0],[0,0]]
+Rectangle Draw Karna
+for x,y in self.coordinates:
+Har coordinate ke liye rectangle create hoga.
+
+*square = canvas.create_rectangle(...)
+Snake ka body draw ho jayega.
+
+
+6. Food Class
+class Food:
+
+**Food generate karti hai.
+Random Position
+x = random.randint(...)
+y = random.randint(...)
+
+**Food random location par aayega.
+Example:
+[200,100]
+Food Draw
+canvas.create_oval(...)
+Red color ka circle banega.
+
+
+
+7. next_turn()
+def next_turn(snake, food):
+Game ka main loop hai.
+Har 100 ms baad run hota hai.
+
+Snake Head Position
+x, y = snake.coordinates[0]
+Head ki position lete hain.
+
+Direction Check
+if direction == "up":
+    y -= SPACE_SIZE
+Up → y kam.
+
+elif direction == "down":
+    y += SPACE_SIZE
+Down → y badhega.
+
+elif direction == "left":
+    x -= SPACE_SIZE
+Left → x kam.
+
+elif direction == "right":
+    x += SPACE_SIZE
+Right → x badhega.
+
+New Head Add
+snake.coordinates.insert(0,(x,y))
+New head list ke start mein add hota hai.
+
+Example:
+Before:
+[(20,20),(20,40),(20,60)]
+
+After move
+[(40,20),(20,20),(20,40),(20,60)]
+Head Draw
+square = canvas.create_rectangle(...)
+Naya block draw hota hai.
+
+8. Food Eat Check
+if x == food.coordinates[0] and y == food.coordinates[1]:
+Agar snake food tak pahunch gaya.
+
+Score Increase
+score += 1
+Score +1.
+
+Score Update
+label.config(text=f"Score: {score}")
+Label update hoga.
+
+Old Food Delete
+canvas.delete("food")
+Purna food remove.
+
+New Food Generate
+food = Food()
+Naya food aa jayega.
+
+
+9. Agar Food Nahi Khaya
+else:
+
+Tail remove hogi.
+Last Coordinate Delete
+del snake.coordinates[-1]
+Last body part remove.
+
+Last Rectangle Delete
+canvas.delete(snake.squares[-1])
+
+Canvas se bhi delete.
+Isse snake move karta hua lagta hai.
+
+
+10. Collision Check
+if check_collisions(snake):
+Wall ya body se takra gaya?
+
+Takra Gaya
+game_over()
+Game khatam.
+
+Nahi Takraya
+window.after(SPEED,next_turn,snake,food)
+100 ms baad fir se next_turn call.
+
+11. Direction Change Function
+def change_direction(new_direction):
+Arrow keys press karne par direction change karta hai.
+
+Example
+if direction != "right":
+Agar snake right ja raha hai to direct left nahi ja sakta.
+Ye self-collision avoid karta hai.
+
+12. check_collisions()
+def check_collisions(snake):
+Collision check karta hai.
+
+Wall Collision
+if x < 0 or x >= WIDTH:
+Left ya right wall.
+
+if y < 0 or y >= HEIGHT:
+Top ya bottom wall.
+
+Body Collision
+for body_part in snake.coordinates[1:]:
+Head ko body ke saath compare karta hai.
+
+if x == body_part[0] and y == body_part[1]:
+Body se takra gaya.
+Return:
+True
+
+
+13. game_over()
+def game_over():
+Game end screen.
+
+Sab Delete
+canvas.delete(ALL)
+Canvas clear.
+
+Text Show
+canvas.create_text(...)
+Screen par:
+GAME OVER
+show karega.
+
+14. Window Creation
+window = Tk()
+Main window create.
+
+Title
+window.title("Snake Game")
+Resize Off
+window.resizable(False,False)
+Window resize nahi hogi.
+
+15. Score Label
+label = Label(...)
+Top par score show karega.
+
+16. Canvas
+canvas = Canvas(...)
+Yahi game area hai.
+
+17. Keyboard Controls
+window.bind("<Left>", ...)
+Left arrow.
+
+window.bind("<Right>", ...)
+Right arrow.
+
+window.bind("<Up>", ...)
+Up arrow.
+
+window.bind("<Down>", ...)
+Down arrow.
+
+18. Object Creation
+snake = Snake()
+Snake create.
+
+food = Food()
+Food create.
+
+19. Start Game
+next_turn(snake, food)
+Game loop start.
+
+20. Keep Window Running
+window.mainloop()
+Window continuously open rahegi aur user input listen karegi.
+
+Program Start
+      ↓
+Window Create
+      ↓
+Snake Create
+      ↓
+Food Create
+      ↓
+next_turn()
+      ↓
+Move Snake
+      ↓
+Food Mila ?
+   ↓         ↓
+ Yes        No
+ ↓           ↓
+Score+1   Tail Delete
+ ↓           ↓
+New Food     ↓
+      ↓
+Collision Check
+      ↓
+Game Over ? 
+ ↓        ↓
+Yes      No
+ ↓        ↓
+End    next_turn()
