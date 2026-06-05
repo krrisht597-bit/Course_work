@@ -73,3 +73,84 @@ match objects.
 ● re.sub(pattern, repl, string): Replaces occurrences of the
 pattern with the replacement string.
 ● re.split(pattern, string): Splits the string by occurrences of 
+
+
+1. Functions with Parameters
+
+Function ko values pass karne ke liye parameters use kiye jate hain.
+
+2. Returning a Value from a Function
+
+return keyword function se value wapas bhejne ke liye use hota hai.
+
+3. Default Parameters
+
+Parameter ki default value pehle se define kar sakte hain.
+
+4. Keyword Arguments
+
+Argument ko parameter name ke saath pass karna keyword argument kehlata hai.
+
+5. Arbitrary Arguments (*args and **kwargs)
+
+*args multiple positional arguments aur **kwargs multiple keyword arguments accept karta hai.
+
+6. Local Variables
+
+Jo variable function ke andar banta hai use local variable kehte hain.
+
+7. Global Variables
+
+Jo variable function ke bahar banta hai aur poore program me use ho sakta hai use global variable kehte hain.
+
+8. Base Case or Recursive Case
+
+Base case recursion ko stop karta hai aur recursive case function ko dobara call karta hai.
+
+9. Map()
+
+map() function kisi function ko iterable ke har element par apply karta hai.
+
+10. Filter()
+
+filter() condition ke basis par elements ko select karta hai.
+
+11. Reduce()
+
+reduce() iterable ke elements ko combine karke ek single value return karta hai.
+
+12. Generators
+
+Generator ek special function hai jo yield ka use karke values ko ek-ek karke generate karta hai.
+
+13. Iterators
+
+Iterator ek object hai jo data ko ek time par ek element return karta hai.
+
+14. Modules
+
+Module Python file hoti hai jisme functions, classes aur variables store hote hain.
+
+15. File Handling
+
+File Handling file ko create, read, write aur update karne ki process hai.
+
+16. JSON
+
+JSON data ko text format me store aur exchange karne ka lightweight format hai.
+
+17. Exception
+
+Program execution ke dauran aane wali error ko exception kehte hain.
+
+18. Exception Handling
+
+try-except block ka use karke exceptions ko handle karna exception handling kehlata hai.
+
+19. Decorators
+
+Decorator ek function hai jo dusre function ki functionality ko modify ya enhance karta hai.
+
+20. seek() Method
+
+seek() file pointer ko kisi specific position par le jane ke liye use hota hai.
