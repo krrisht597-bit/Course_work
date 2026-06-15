@@ -4,7 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
+    <style>
+
+            .tf{
+                width: 200px; 
+                height: 30px; 
+                border: 1px solid black; 
+                border-radius: 5px; 
+                background-color:bisque; 
+                color: chocolate;
+            }
+
+    </style>
 </head>
 
 <body>
@@ -13,14 +26,15 @@
         <fieldset>
             <legend>Registration Form</legend>
             <label for="uname">Username</label>
-            <input type="text" name="uname" id="uname" placeholder="Enter username">
+            <input type="text" name="uname" id="uname" placeholder="Enter username" class="tf"
+            >
             <br>
             <br>
             <label for="email">Email</label>
-            <input type="text" id="email" name="email">
+            <input type="text" id="email" name="email" class="tf">
             <br><br>
             <label for="">Password</label>
-            <input type="password" name="pass">
+            <input type="password" name="pass" class="tf">
             <br><br>
             <label for="">Gender</label>
             <input type="radio" name="gender" value="male" checked>Male
@@ -32,7 +46,7 @@
             <input type="checkbox" name="lang" value="eng">English
             <br><br>
             <label for="">Country</label>
-            <select name="country" id="">
+            <select name="country" id="" class="tf">
                 <option value="1">India</option>
                 <option value="2">USA</option>
                 <option value="3">UK</option>
@@ -46,17 +60,17 @@
 
             <br><br>
             <label for="">Date</label>
-            <input type="date" name="date">
+            <input type="date" name="date" class="tf">
 
             <br><br>
             <label for="">Color</label>
-            <input type="color" name="color">
+            <input type="color" name="color" class="tf">
 
             <br>
             <br>
 
             <label for="">Age</label>
-            <input type="number" name="age">
+            <input type="number" name="age" class="tf">
             <br><br>
 
             <input type="submit">
