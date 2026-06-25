@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profiles</title>
+</head>
+<body>
+
+<h1>All Profiles</h1>
+
+<a href="/add/">Add New Profile</a>
+
+<hr>
+
+<ul>
+
+{% for profile in profiles %}
+
+<li>
+
+Username:
+{{ profile.username }}
+
+|
+
+Age:
+{{ profile.age }}
+
+|
+
+{% if profile.is_public %}
+Public
+{% else %}
+Private
+{% endif %}
+
+</li>
+
+{% empty %}
+
+<li>No Profiles Found</li>
+
+{% endfor %}
+
+</ul>
+
+</body>
+</html>
