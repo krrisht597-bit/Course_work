@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Categories | Modern Jackets{% endblock %}
+{% block body_class %}inner-page{% endblock %}
+{% block header_class %}header--solid{% endblock %}
+
+{% block content %}
+   <section class="products container">
+      <h1 class="section__title">Our Categories</h1>
+
+      <div class="products__grid">
+         {% for product in products %}
+         <article class="product__card {{ product.color_class }}">
+            <img src="{% static product.image %}" alt="{{ product.name }}" class="product__img">
+            <h3 class="product__name">{{ product.name }}</h3>
+            <p class="product__desc">{{ product.description|truncatewords:15 }}</p>
+            <p class="product__price">${{ product.price }}</p>
+            <form action="{% url 'add_to_cart' product.id %}" method="POST">
+               {% csrf_token %}
+               <input type="hidden" name="next" value="{{ request.path }}">
+               <button type="submit" class="home__button"><i class="ri-shopping-bag-4-fill"></i> Buy Now</button>
+            </form>
+         </article>
+         {% empty %}
+         <p>No products available right now. Add products from the Django admin.</p>
+         {% endfor %}
+      </div>
+   </section>
+{% endblock %}

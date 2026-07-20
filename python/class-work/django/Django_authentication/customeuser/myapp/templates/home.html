@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Dashboard · Registrar Office{% endblock %}
+{% block nav %}<a href="{% url 'logout' %}">Log Out</a>{% endblock %}
+
+{% block content %}
+<div class="card">
+  <div class="tab">Dashboard</div>
+  <div style="display:flex; align-items:center; gap:16px; margin-bottom:4px;">
+    <div class="id-photo">{{ user.first_name|slice:":1"|upper }}</div>
+    <div>
+      <h2 style="margin:0;">Welcome, {{ user.first_name }}</h2>
+      <span class="stamp {% if user.role.name == 'faculty' %}plum{% endif %}">{{ user.role.name|default:"unassigned" }}</span>
+    </div>
+  </div>
+  <p class="subtext" style="margin-top:20px;">{{ user.address|default:"No address on file." }}</p>
+
+  <a class="btn btn-sage" href="{% url 'student' %}">Student Record</a>
+  <a class="btn btn-plum" href="{% url 'faculty' %}">Faculty Record</a>
+
+  <div class="foot-link">
+    <a href="{% url 'logout' %}">Log out of this session</a>
+  </div>
+</div>
+{% endblock %}

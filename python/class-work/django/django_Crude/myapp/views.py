@@ -32,7 +32,7 @@ def update_student(request):
     if request.method == 'POST':
         data = request.POST
         name = data.get("name")
-        email = data.get("email")
+        email = data.get("email") 
         age = data.get("age")
         students.name=name
         students.email=email

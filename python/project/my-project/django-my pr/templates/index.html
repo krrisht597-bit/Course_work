@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body_class %}home-page{% endblock %}
+
+{% block content %}
+   <section class="home">
+      <div class="home__container">
+         <div class="home__swiper swiper">
+            <div class="swiper-wrapper">
+
+               {% for product in products %}
+               <article class="home__slider {{ product.color_class }} swiper-slide">
+                  <div class="home__logos">
+                     <img src="{% static 'img/logo-nike.svg' %}" alt="" class="home__logo-1">
+                     <img src="{% static 'img/logo-nike.svg' %}" alt="" class="home__logo-2">
+                     <img src="{% static 'img/logo-nike.svg' %}" alt="" class="home__logo-3">
+                  </div>
+                  <div class="home__image" data-swiper-parallax="-800">
+                     <img src="{% static product.image %}" alt="{{ product.name }}" class="home__img">
+                  </div>
+                  <div class="home__data">
+                     <div class="home__info">
+                        <h3 class="home__name">{{ product.name }}</h3>
+                     </div>
+                     <div class="home__description-box">
+                        <p class="home__description">{{ product.description }}</p>
+                     </div>
+                     <div class="home__purchase">
+                        <p class="home__price">${{ product.price }}</p>
+                        <form action="{% url 'add_to_cart' product.id %}" method="POST">
+                           {% csrf_token %}
+                           <input type="hidden" name="next" value="{{ request.path }}">
+                           <button type="submit" class="home__button">
+                              <i class="ri-shopping-bag-4-fill"></i> Buy Now
+                           </button>
+                        </form>
+                     </div>
+                  </div>
+               </article>
+               {% endfor %}
+
+            </div>
+            <div class="swiper-pagination"></div>
+         </div>
+      </div>
+   </section>
+{% endblock %}

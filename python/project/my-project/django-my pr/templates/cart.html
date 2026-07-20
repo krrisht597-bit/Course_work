@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Your Cart | Modern Jackets{% endblock %}
+{% block body_class %}inner-page{% endblock %}
+{% block header_class %}header--solid{% endblock %}
+
+{% block content %}
+   <section class="cart container">
+      <h1 class="section__title">Your Cart</h1>
+
+      {% if items %}
+      <div class="cart__list">
+         {% for item in items %}
+         <article class="cart__item">
+            <img src="{% static item.product.image %}" alt="{{ item.product.name }}" class="cart__img">
+            <div class="cart__info">
+               <h3 class="cart__name">{{ item.product.name }}</h3>
+               <p class="cart__meta">Qty: {{ item.quantity }} &times; ${{ item.product.price }}</p>
+            </div>
+            <p class="cart__subtotal">${{ item.subtotal }}</p>
+            <form action="{% url 'remove_from_cart' item.product.id %}" method="POST">
+               {% csrf_token %}
+               <button type="submit" class="cart__remove" aria-label="Remove item">
+                  <i class="ri-close-circle-fill"></i>
+               </button>
+            </form>
+         </article>
+         {% endfor %}
+      </div>
+
+      <div class="cart__total">
+         <span>Total</span>
+         <span>${{ total }}</span>
+      </div>
+      {% else %}
+      <p class="cart__empty">Your cart is empty right now. <a href="{% url 'categories' %}">Browse jackets</a>.</p>
+      {% endif %}
+   </section>
+{% endblock %}

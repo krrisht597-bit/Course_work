@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Student Record{% endblock %}
+{% block nav %}<a href="{% url 'home' %}">Dashboard</a><a href="{% url 'logout' %}">Log Out</a>{% endblock %}
+
+{% block content %}
+<div class="card">
+  <div class="tab sage">Student Record</div>
+  <h1>Student Page</h1>
+  <p class="subtext">This record is visible only to accounts filed under the student role.</p>
+  <span class="stamp">verified student</span>
+  <div class="foot-link">
+    <a href="{% url 'home' %}">Back to dashboard</a>
+  </div>
+</div>
+{% endblock %}

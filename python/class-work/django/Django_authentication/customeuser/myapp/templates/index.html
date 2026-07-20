@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Sign In · Registrar Office{% endblock %}
+{% block nav %}<a href="{% url 'reg' %}">Register</a>{% endblock %}
+
+{% block content %}
+<div class="card">
+  <div class="tab">Access Card</div>
+  <h1>Sign In</h1>
+  <p class="subtext">Enter the phone number and password on file to open your record.</p>
+
+  <div class="msg">{{error}}</div>
+
+  <form method="post">
+    {% csrf_token %}
+    <div class="field">
+      <label for="phone">Phone Number</label>
+      <input type="text" id="phone" name="phone" placeholder="98765 43210" required>
+    </div>
+    <div class="field">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="••••••••" required>
+    </div>
+    <button type="submit">Verify &amp; Enter</button>
+  </form>
+
+  <div class="foot-link">
+    No record on file? <a href="{% url 'reg' %}">Register here</a>
+  </div>
+</div>
+{% endblock %}

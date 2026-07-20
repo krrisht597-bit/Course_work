@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block title %}New Record · Registrar Office{% endblock %}
+{% block nav %}<a href="{% url 'index' %}">Sign In</a>{% endblock %}
+
+{% block content %}
+<div class="card wide">
+  <div class="tab sage">New Record</div>
+  <h1>Registration</h1>
+  <p class="subtext">Fill in every field to open a new record with the office.</p>
+
+  <div class="msg ok">{{success}}</div>
+
+  <form method="post" action="">
+    {% csrf_token %}
+
+    <div class="field">
+      <label for="role">Role</label>
+      <select name="role" id="role" required>
+        <option value="">— select role —</option>
+        {% for role in roles %}
+        <option value="{{role.id}}">{{role.name}}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div class="row-2">
+      <div class="field">
+        <label for="firstname">First Name</label>
+        <input type="text" id="firstname" name="firstname" placeholder="First name" required>
+      </div>
+      <div class="field">
+        <label for="lastname">Last Name</label>
+        <input type="text" id="lastname" name="lastname" placeholder="Last name" required>
+      </div>
+    </div>
+
+    <div class="row-2">
+      <div class="field">
+        <label for="age">Age</label>
+        <input type="text" id="age" name="age" placeholder="Age" required>
+      </div>
+      <div class="field">
+        <label for="phone">Phone</label>
+        <input type="text" id="phone" name="phone" placeholder="98765 43210" required>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="adr">Address</label>
+      <textarea id="adr" name="adr" placeholder="Street, city, state"></textarea>
+    </div>
+
+    <div class="field">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Choose a password" required>
+    </div>
+
+    <button type="submit">Open Record</button>
+  </form>
+
+  <div class="foot-link">
+    Already have a record? <a href="{% url 'index' %}">Sign in here</a>
+  </div>
+</div>
+{% endblock %}

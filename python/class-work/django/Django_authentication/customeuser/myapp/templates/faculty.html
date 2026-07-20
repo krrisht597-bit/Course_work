@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Faculty Record{% endblock %}
+{% block nav %}<a href="{% url 'home' %}">Dashboard</a><a href="{% url 'logout' %}">Log Out</a>{% endblock %}
+
+{% block content %}
+<div class="card">
+  <div class="tab plum">Faculty Record</div>
+  <h1>Faculty Page</h1>
+  <p class="subtext">This record is visible only to accounts filed under the faculty role.</p>
+  <span class="stamp plum">verified faculty</span>
+  <div class="foot-link">
+    <a href="{% url 'home' %}">Back to dashboard</a>
+  </div>
+</div>
+{% endblock %}
